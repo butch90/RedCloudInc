@@ -1,0 +1,60 @@
+<html ng-app="redCloud">
+	<head>
+		<title>RedCloud</title>
+
+		<meta charset="utf-8">
+
+		<!-- base href for Angular (HTML5 mode) -->
+		<base href="/">
+
+		<!-- meta tag for bootstrap (mobile devices) -->
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+
+		<!-- all CSS -->
+		<link rel="stylesheet" href="/css/bootstrap.css">
+		<link rel="stylesheet" href="/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/css/all.css">
+
+		<!-- JS libs -->
+		<script src="/libs/jquery.min.js"></script>
+		<script src="/libs/angular.min.js"></script>
+		<script src="/libs/angular-touch.min.js"></script>
+		<script src="/libs/angular-route.min.js"></script>
+		<script src="/libs/angular-resource.min.js"></script>
+		<script src="/libs/ui-bootstrap-tpls.min.js"></script>
+		<script src="/libs/bootstrap.js"></script>
+
+		<!-- our JS -->
+		<script src="/app.js"></script>
+
+   		<!-- controllers -->
+		<script src="/controllers/home.js"></script>
+		<script src="/controllers/download.js"></script>
+		<script src="/controllers/upload.js"></script>
+		<script src="/controllers/ngshow.js"></script>
+
+   		<!-- directives -->
+	    <script src="directives/header.js"></script>
+	    <script src="directives/footer.js"></script>
+	    <script src="directives/navbar.js"></script>
+    
+		<!-- Custom Fonts -->
+	
+		<!-- Font Awesome -->
+		
+	</head>
+    <body>	
+    	<div class="wrapper">
+    		<header></header>
+    	</div>
+    	<div ng-controller="showCtrl">
+			<div ng-hide="currentPath === '/'">
+					<navbar></navbar>
+				</div>
+			</div>
+		</div>
+    	
+			<ng-view></ng-view>
+			<footer></footer>
+		</body>
+</html>

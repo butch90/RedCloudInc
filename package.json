@@ -1,0 +1,13 @@
+{
+  "name": "redcloud",
+  "version": "0.0.1",
+  "dependencies": {
+    "body-parser": "*",
+    "compression": "*",
+    "cookie-parser": "*",
+    "express": "*",
+    "express-session": "*",
+    "mongoose": "*",
+    "compression": "*"
+  }
+}

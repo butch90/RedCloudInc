@@ -1,0 +1,53 @@
+.verticalButton
+{
+    vertical-align: middle;
+}
+
+hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+}
+
+.marginform {
+	margin-top: 15%;
+}
+
+.marginformheading {
+	margin: 50px;
+}
+
+.maxwidth {
+	width: 80%;
+	max-width: 400px;
+	margin-bottom: 1.5em;
+	height: 5%;
+}
+
+.borderform {
+	
+	border-radius: 10px;
+	border: 1px solid;
+	padding-bottom: 70px;
+	padding-top: 70px;
+	margin-left: 50px;
+
+}
+
+.headingfont{
+	font-size: 4.5em;
+	color: #ff0000;
+	margin-top: 0.5em;
+	font-family: arial black;
+}
+
+.footer {
+    position: fixed;
+    height: 100px;
+    bottom: 0;
+    width: 100%;
+}
