@@ -8,6 +8,7 @@
     "express": "*",
     "express-session": "*",
     "mongoose": "*",
-    "compression": "*"
+    "compression": "*",
+    "multer": "^1.2.0"
   }
 }

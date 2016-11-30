@@ -3,6 +3,10 @@
     vertical-align: middle;
 }
 
+body {
+	margin-bottom: 80px;
+}
+
 hr {
     display: block;
     margin-top: 0.5em;
@@ -47,7 +51,8 @@ hr {
 
 .footer {
     position: fixed;
-    height: 100px;
-    bottom: 0;
+    height: 80px;
+    bottom: 0px;
     width: 100%;
+    margin-bottom:0px;
 }

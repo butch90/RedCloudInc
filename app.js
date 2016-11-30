@@ -23,13 +23,11 @@ g.settings = {
     'Server',
     'Login',
     'Users',
-    /*'REST',*/
   ],
   Login: {
     route: '/api/login/:id?'
   },
   User: {
-    // define vehicles param to get at list of orders(vehicles) the employee has
     route: '/api/user/:id?'
   },
  /* REST: {
@@ -37,6 +35,16 @@ g.settings = {
     routeSql: '/sql/api/:model/:id?'
   },*/
 };
+
+var options = m.multer.diskStorage({
+  destination: g.settings.appRoot + '/uploads',
+  filename: function (req, file, cb) {
+    cb(null, (m.path.basename(file.originalname) + m.path.extname(file.originalname)));
+  }
+})
+var upload = m.multer({storage: options});
+
+m.upload = upload;
 
 g.classes = {};
 g.settings.classes.forEach((x)=>{

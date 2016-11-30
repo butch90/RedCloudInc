@@ -18,7 +18,7 @@ app.config(["$routeProvider", "$locationProvider", function ($routeProvider, $lo
 	})
 	.when("/upload",{
 		templateUrl: "views/upload.html",
-		controller: "uploadCtrl"
+		controller: "uploaderCtrl"
 	})
 	.otherwise({
 		templateUrl: "views/error.html"

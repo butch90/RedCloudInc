@@ -1,3 +1,3 @@
-app.controller("uploadCtrl", ["$scope", "$location", "$http", function ($scope, $location, $http) {
+app.controller("uploaderCtrl", ["$scope", "$location", "$http", function ($scope, $location, $http) {
 	
 }]);

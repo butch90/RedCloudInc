@@ -8,16 +8,25 @@ module.exports = class Server {
 
 		this.app.use(m.express.static(g.settings.appRoot + this.settings.webRoot));
 
+		this.multer = m.multer;
+
+		this.upload = m.upload;
+		
 		this.setup();
+
 	}
 
 	setup(){
 		var me = this;
 
-		this.app.get('*', function(req, res){
+		this.app.get('*', (req, res) => {
 
 			res.sendFile(g.appRoot + g.webRoot + '/index.html');
 		});
+
+		this.app.post('/uploadFile', me.upload.any(), (req, res) =>{
+			res.json({status: 'working'});
+		})
 
 		this.app.use(m.bodyparser.json());
 		this.app.use(m.compression());
