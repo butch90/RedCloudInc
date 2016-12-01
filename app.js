@@ -23,17 +23,14 @@ g.settings = {
     'Server',
     'Login',
     'Users',
+    'Fs',
   ],
   Login: {
     route: '/api/login/:id?'
   },
   User: {
     route: '/api/user/:id?'
-  },
- /* REST: {
-    route: '/rest/:model/:id?',
-    routeSql: '/sql/api/:model/:id?'
-  },*/
+  }
 };
 
 var options = m.multer.diskStorage({

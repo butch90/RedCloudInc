@@ -61,7 +61,9 @@ app.controller('uploadCtrl', ['$scope', '$http', 'fileUpload', function ($scope,
 		console.log(m.newFileName,'tjena');
 		var name = m;
 		//var newName = JSON.stringify(name);
-		$scope.finalName = name;
+		//var finalName = name;
+		$scope.name = name;
 		console.log(name)
 	};
 }])
+

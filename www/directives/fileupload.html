@@ -1,11 +1,12 @@
 <div ng-controller="uploadCtrl">
 	<div class="col-lg-6">
-		<h2>Upload you file here</h2>
-		<input type="file" file-model="myFile"/>
-		<button ng-click="uploadFile()">Upload file</button>
+		<h2>Upload your file here</h2>
+		<input type="file" file-model="myFile" class="form-control maxwidth center-block"/>
+		<input type="button" ng-click="uploadFile()" class="form-control maxwidth center-block btn btn-danger" value="Upload file">
 	</div>
 	<div class="col-lg-6">
 		<h3>Filename: </h3>
-		<h3 ng-model="finalName">{{finalName}}</h3>
+		<h3 ng-model="name">{{name}}</h3>
 	</div>
 </div>
+
