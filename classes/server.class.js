@@ -8,8 +8,6 @@ module.exports = class Server {
 
 		this.app = m.express();
 
-		this.app.use(m.express.static(g.settings.appRoot + g.settings.Server.webRoot));
-
 		this.multer = m.multer;
 
 		this.upload = m.upload;
@@ -23,7 +21,22 @@ module.exports = class Server {
 	setup(){
 		var me = this;
 
-		this.app.get('/', (req, res) => {
+		this.app.use(m.express.static(me.appRoot + me.settings.webRoot));
+		this.app.use(m.bodyparser.json());
+		this.app.use(m.compression());
+		this.app.use(m.cookieparser());
+		this.app.use(m.bodyparser.urlencoded({extended: false}));
+		this.app.use(m.compression({threshold: 0}));
+		this.app.use(m.expresssession({
+			genid: function(req) {
+				if (typeof req.sessionID != 'undefined') return req.sessionID;
+			},
+			secret: 'redcloud',
+			resave: false,
+			saveUninitialized: true
+	  }));
+
+		this.app.get('*', (req, res) => {
 
 			res.sendFile(me.appRoot + me.settings.webRoot + '/index.html');
 
@@ -49,19 +62,6 @@ module.exports = class Server {
 			res.json(fileArray);
 		});*/
 
-		this.app.use(m.bodyparser.json());
-		this.app.use(m.compression());
-		this.app.use(m.cookieparser());
-		this.app.use(m.bodyparser.urlencoded({extended: false}));
-		this.app.use(m.compression({threshold: 0}));
-		this.app.use(m.expresssession({
-			genid: function(req) {
-				if (typeof req.sessionID != 'undefined') return req.sessionID;
-			},
-			secret: 'redcloud',
-			resave: false,
-			saveUninitialized: true
-	  }));
 
 		// Mongoose classes
 			new g.classes.Users(this.app);
