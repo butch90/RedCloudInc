@@ -3,6 +3,7 @@ module.exports = class Fs {
 	constructor(express) {
 		this.app = express;
 		this.appRoot = g.settings.appRoot;
+		this.settings = g.settings.Server;
 		this.fs = m.fs;
 		this.router();
 	}
@@ -24,6 +25,10 @@ module.exports = class Fs {
 			console.log(fileArray);
 			});
 			res.json(fileArray);
+		});
+
+		this.app.get('*', (req, res) => {
+			res.sendFile(me.appRoot + me.settings.webRoot + '/index.html');
 		});
 	}
 }

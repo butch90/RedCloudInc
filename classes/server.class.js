@@ -36,17 +36,12 @@ module.exports = class Server {
 			saveUninitialized: true
 	  }));
 
-		this.app.get('*', (req, res) => {
-
-			res.sendFile(me.appRoot + me.settings.webRoot + '/index.html');
-
-		});
-
 		this.app.post('/uploadFile', me.upload.any(), (req, res) =>{
 			res.json({status: 'working'});
 		});
 
-		/*this.app.get('/showFiles', (req, res) => {
+		/*this.app.get('/fs/showFiles', (req, res) => {
+			console.log('syns jag?');
 			var fileArray = [];
 			var folder = me.appRoot + '/uploads';
 			me.fs.readdir(folder, (err,files) => {
@@ -60,8 +55,13 @@ module.exports = class Server {
 			console.log(fileArray);
 			});
 			res.json(fileArray);
-		});*/
+		});
 
+		this.app.get('*', (req, res) => {
+
+			res.sendFile(me.appRoot + me.settings.webRoot + '/index.html');
+
+		});*/
 
 		// Mongoose classes
 			new g.classes.Users(this.app);
