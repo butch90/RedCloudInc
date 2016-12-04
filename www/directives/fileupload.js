@@ -26,8 +26,9 @@ app.service('fileUpload', ['$http', function ($http){
 		var fd = new FormData();
 		fd.append('file', file);
 		var name = JSON.stringify(fd.get('file').name);
+		/*	JSON.stringify(name).split(".").pop();*/
 		var dataName = {fileName: name};
-
+		console.log(dataName);
 		$http.post(uploadUrl, fd, {
 			transformRequest: angular.identity,
 			headers: {'Content-type': undefined}
@@ -58,7 +59,6 @@ app.controller('uploadCtrl', ['$scope', '$http', 'fileUpload', function ($scope,
 		var data = $scope.myFile;
 		var uploadUrl = '/uploadFile';
 		fileUpload.uploadFileToUrl(data, uploadUrl);
-		console.log(m.newFileName,'tjena');
 		var name = m;
 		//var newName = JSON.stringify(name);
 		//var finalName = name;

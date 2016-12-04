@@ -36,44 +36,24 @@ module.exports = class Server {
 			saveUninitialized: true
 	  }));
 
+		// Mongoose classes
+		new g.classes.Users(this.app);
+	  new g.classes.Login(this.app);
+	  new g.classes.Mongo(this.app);
+	  new g.classes.Fs(this.app);
+
 		this.app.post('/uploadFile', me.upload.any(), (req, res) =>{
 			res.json({status: 'working'});
 		});
 
-		/*this.app.get('/fs/showFiles', (req, res) => {
-			console.log('syns jag?');
-			var fileArray = [];
-			var folder = me.appRoot + '/uploads';
-			me.fs.readdir(folder, (err,files) => {
-				if(err){ 
-					throw err;
-				} else {
-					files.forEach(file => {
-						fileArray.push(file);
-					});
-				}
-			console.log(fileArray);
-			});
-			res.json(fileArray);
-		});
-
-		this.app.get('*', (req, res) => {
-
+	  this.app.get('*', (req, res) => {
 			res.sendFile(me.appRoot + me.settings.webRoot + '/index.html');
-
-		});*/
-
-		// Mongoose classes
-			new g.classes.Users(this.app);
-	    new g.classes.Login(this.app);
-	    new g.classes.Mongo(this.app);
-	    new g.classes.Fs(this.app);
+		});
 
 		this.app.listen(me.settings.port, function(){
 
 			var date = new Date();
 			var time = ((date.getHours() < 10) ? ('0' + date.getHours()) : date.getHours()) + ':' + ((date.getMinutes() < 10) ? ('0' + date.getMinutes()) : date.getMinutes());
-
 		  	console.log("Server started at port: " + me.settings.port + '\nTime: ' + time);
 		});
 	}

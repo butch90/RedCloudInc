@@ -1,7 +1,4 @@
-.verticalButton
-{
-    vertical-align: middle;
-}
+/*Final tags*/
 
 body {
 	margin-bottom: 80px;
@@ -17,6 +14,13 @@ hr {
     border-width: 1px;
 }
 
+/*Diffrent style classes*/
+
+.verticalButton
+{
+    vertical-align: middle;
+}
+
 .marginform {
 	margin-top: 15%;
 }
@@ -30,6 +34,14 @@ hr {
 	max-width: 400px;
 	margin-bottom: 1.5em;
 	height: 5%;
+}
+
+.maxwidthandmargintop {
+	width: 80%;
+	max-width: 400px;
+	margin-bottom: 1.5em;
+	height: 5%;
+	margin-top: 2em;
 }
 
 .borderform {
@@ -48,6 +60,8 @@ hr {
 	margin-top: 0.5em;
 	font-family: arial black;
 }
+
+ /*Footer*/
 
 .footer {
     position: fixed;

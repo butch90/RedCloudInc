@@ -11,7 +11,6 @@ module.exports = class Fs {
 		var me = this;
 
 		this.app.get('/fs/showFiles', (req, res) => {
-			console.log('syns jag?');
 			var fileArray = [];
 			var folder = me.appRoot + '/uploads';
 			me.fs.readdir(folder, (err,files) => {
@@ -23,18 +22,9 @@ module.exports = class Fs {
 					});
 				}
 			console.log(fileArray);
+			var finalFiles = JSON.stringify(fileArray);
+			res.json(finalFiles);
 			});
-			res.json(fileArray);
-		});
-
-		this.app.get('*', (req, res) => {
-			res.sendFile(me.appRoot + me.settings.webRoot + '/index.html');
 		});
 	}
 }
-
-
-
-
-
-		
