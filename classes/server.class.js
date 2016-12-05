@@ -37,8 +37,8 @@ module.exports = class Server {
 	  }));
 
 		// Mongoose classes
-		new g.classes.Users(this.app);
 	  new g.classes.Login(this.app);
+		new g.classes.Users(this.app);
 	  new g.classes.Mongo(this.app);
 	  new g.classes.Fs(this.app);
 

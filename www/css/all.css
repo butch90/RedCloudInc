@@ -1,7 +1,11 @@
 /*Final tags*/
+html{
+	height: 100%;
+}
 
 body {
-	margin-bottom: 80px;
+	position: relative;
+	padding-bottom: 80px;
 }
 
 hr {
@@ -33,14 +37,12 @@ hr {
 	width: 80%;
 	max-width: 400px;
 	margin-bottom: 1.5em;
-	height: 5%;
 }
 
 .maxwidthandmargintop {
 	width: 80%;
 	max-width: 400px;
 	margin-bottom: 1.5em;
-	height: 5%;
 	margin-top: 2em;
 }
 
@@ -64,9 +66,12 @@ hr {
  /*Footer*/
 
 .footer {
-    position: fixed;
-    height: 80px;
+    position: absolute;
+    height: 40px;
     bottom: 0px;
+    right: 0px;
+    left: 0px;
     width: 100%;
-    margin-bottom:0px;
+    padding-top: 0px;
+
 }
