@@ -13,7 +13,6 @@ app.controller('filedownloadCtrl', ['$scope', '$http', '$location', ($scope, $ht
 			console.log('files retrived');
 			var myArray = data.data;
 			var obj = myArray.split(",");
-			/*var newObj = obj.replace(/[/g, '');*/
 			Object.assign({}, obj);
 			//console.log(obj);
 			$scope.Items = obj;

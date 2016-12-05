@@ -1,7 +1,11 @@
 /*Final tags*/
+html{
+	height: 100%;
+}
 
 body {
-	margin-bottom: 80px;
+	position: relative;
+	padding-bottom: 40px;
 }
 
 hr {
@@ -64,9 +68,11 @@ hr {
  /*Footer*/
 
 .footer {
-    position: fixed;
+    position: absolute;
     height: 80px;
     bottom: 0px;
     width: 100%;
-    margin-bottom:0px;
+    right: 0px;
+    left: 0px;
+    padding-top: 0px;
 }
