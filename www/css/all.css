@@ -5,7 +5,8 @@ html{
 
 body {
 	position: relative;
-	padding-bottom: 40px;
+	padding-bottom: 80px;
+
 }
 
 hr {
@@ -37,14 +38,12 @@ hr {
 	width: 80%;
 	max-width: 400px;
 	margin-bottom: 1.5em;
-	height: 5%;
 }
 
 .maxwidthandmargintop {
 	width: 80%;
 	max-width: 400px;
 	margin-bottom: 1.5em;
-	height: 5%;
 	margin-top: 2em;
 }
 
@@ -71,8 +70,8 @@ hr {
     position: absolute;
     height: 80px;
     bottom: 0px;
-    width: 100%;
     right: 0px;
     left: 0px;
+    width: 100%;
     padding-top: 0px;
 }
