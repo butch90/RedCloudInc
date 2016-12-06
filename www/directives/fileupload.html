@@ -3,6 +3,7 @@
 		<h2>Upload your file here</h2>
 		<input type="file" file-model="myFile" class="form-control maxwidth center-block"/>
 		<input type="button" ng-click="uploadFile()" class="form-control maxwidth center-block btn btn-danger" value="Upload file">
+		<h3 ng-model="errors">{{errors}}</h3>
 	</div>
 	<div class="col-lg-6">
 		<h3>Filename: </h3>

@@ -27,7 +27,7 @@ app.service('fileUpload', ['$http', function ($http){
 		fd.append('file', file);
 		var name = JSON.stringify(fd.get('file').name);
 		/*	JSON.stringify(name).split(".").pop();*/
-		var dataName = {/*fileName: */name};
+		var dataName = {fileName: name};
 		console.log(dataName);
 		$http.post(uploadUrl, fd, {
 			transformRequest: angular.identity,
@@ -37,19 +37,23 @@ app.service('fileUpload', ['$http', function ($http){
 			console.log(res.status);
 			m.newFileName = name;
 			console.log(m.newFileName);
-			
-			/*$http({
+			console.log(dataName);
+			$http({
 				method: 'POST',
-				url: '/uploadName',
+				url: '/fs/uploadName',
 				data: dataName,
 				headers: {'Content-type': 'application/json'}
 			})
-			.success(function (res){
+			.success(function (res, err){
+				if(err) {
+					console.log('error no file added');
+					return;
+				}
 				console.log(res, 'res');
 			})
 			.error(function (){
-				console.log('error');
-			})*/
+				console.log('error at uploading filename');
+			})
 		})
 	}
 }]);
@@ -57,13 +61,13 @@ app.service('fileUpload', ['$http', function ($http){
 app.controller('uploadCtrl', ['$scope', '$http', 'fileUpload', function ($scope, $http, fileUpload){
 	$scope.uploadFile = function(){
 		var data = $scope.myFile;
-		var uploadUrl = '/uploadFile';
+		var uploadUrl = '/fs/uploadFile';
 		fileUpload.uploadFileToUrl(data, uploadUrl);
 		var name = m;
 		//var newName = JSON.stringify(name);
 		//var finalName = name;
 		$scope.name = name;
-		console.log(name)
+		console.log(name);
 	};
 }])
 

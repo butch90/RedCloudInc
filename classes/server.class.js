@@ -41,11 +41,7 @@ module.exports = class Server {
 		new g.classes.Users(this.app);
 	  new g.classes.Mongo(this.app);
 	  new g.classes.Fs(this.app);
-
-		this.app.post('/uploadFile', me.upload.any(), (req, res) =>{
-			res.json({status: 'working'});
-		});
-
+	  
 	  this.app.get('*', (req, res) => {
 			res.sendFile(me.appRoot + me.settings.webRoot + '/index.html');
 		});
