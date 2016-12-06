@@ -9,7 +9,9 @@
 		<h2>All current files in folder:</h2>
 		<ul>
 			<li ng-repeat="item in Items track by $index">
-				{{item}}
+				<img ng-src="">
+				<a target="_self" href="../../uploads/redcloud.png" download=>{{item}}</a> 
+				<!-- <a target="_self" ng-href="{{item}}" download>{{item}}</a> -->
 			</li>
 		</ul>
 	</div>

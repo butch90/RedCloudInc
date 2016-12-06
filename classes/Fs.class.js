@@ -18,7 +18,10 @@ module.exports = class Fs {
 					throw err;
 				} else {
 					files.forEach(file => {
-						fileArray.push(file);
+						var length = file.length-4;
+						var finalFile = file.slice(0, length);
+						//var fileUrl = '../../uploads/'+ finalFile;
+						fileArray.push(finalFile);
 					});
 				}
 			console.log(fileArray);

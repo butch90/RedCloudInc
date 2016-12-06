@@ -27,7 +27,7 @@ app.service('fileUpload', ['$http', function ($http){
 		fd.append('file', file);
 		var name = JSON.stringify(fd.get('file').name);
 		/*	JSON.stringify(name).split(".").pop();*/
-		var dataName = {fileName: name};
+		var dataName = {/*fileName: */name};
 		console.log(dataName);
 		$http.post(uploadUrl, fd, {
 			transformRequest: angular.identity,
