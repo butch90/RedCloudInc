@@ -64,6 +64,11 @@ hr {
 	font-family: arial black;
 }
 
+/*List styles*/
+.limaxwidth {
+	width: 50%;
+}
+
  /*Footer*/
 
 .footer {
