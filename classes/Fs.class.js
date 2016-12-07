@@ -19,8 +19,8 @@ module.exports = class Fs {
 		});
 
 		this.app.post('/fs/uploadName', (req, res) =>{
-			/*var length = namedata.length-4;
-			var name = namedata.slice(0, length);*/
+			var length = req.body.fileName.length-1;
+			req.body.fileName = req.body.fileName.slice(1, length);
 			me.files.create(req.body, (err, data) => {
 				if(err) {
 					console.log(err.stack);
