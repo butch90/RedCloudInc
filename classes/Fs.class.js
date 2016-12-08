@@ -20,8 +20,8 @@ module.exports = class Fs {
 					files.forEach(file => {
 						var length = file.length-4;
 						var finalFile = file.slice(0, length);
-						//var fileUrl = '../../uploads/'+ finalFile;
-						fileArray.push(finalFile);
+						var fileUrl = '../../uploads/'+ finalFile;
+						fileArray.push(fileUrl);
 					});
 				}
 			console.log(fileArray);

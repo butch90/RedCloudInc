@@ -22,3 +22,5 @@ app.controller('filedownloadCtrl', ['$scope', '$http', '$location', ($scope, $ht
 		});
 	}
 }])
+
+/*foreach - attr - append , jquery*/
