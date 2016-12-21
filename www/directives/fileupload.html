@@ -1,12 +1,18 @@
 <div ng-controller="uploadCtrl">
 	<div class="col-lg-6">
-		<h2>Upload your file here</h2>
+		<h2 class="text-center">Upload your file here</h2>
+		<h4 class="text-center">For best performance, upload file in the following formats</h4>
+		<ul>
+			<li class="list-group-item list-group-item-action list-group-item-success lismallwidth center-block">.zip .rar </li>
+			<li class="list-group-item list-group-item-action list-group-item-success lismallwidth center-block">.png .jpg .bmp .mp3 .pdf</li>
+		</ul>
 		<input type="file" file-model="myFile" class="form-control maxwidth center-block"/>
 		<input type="button" ng-click="uploadFile()" class="form-control maxwidth center-block btn btn-danger" value="Upload file">
+		<h3 ng-model="errors">{{errors}}</h3>
 	</div>
 	<div class="col-lg-6">
-		<h3>Filename: </h3>
-		<h3 ng-model="name">{{name}}</h3>
+		<h3 class="text-center">Filename: </h3>
+		<h3 ng-model="name" class="text-center">{{name}}</h3>
 	</div>
 </div>
 

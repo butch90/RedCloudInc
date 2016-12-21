@@ -1,18 +1,20 @@
 <div ng-controller="filedownloadCtrl">
 	<div class="col-lg-6">
-		<h2>Find files in folder.</h2>
+		<h2 class="text-center">Find files in folder.</h2>
 		<button ng-click="showFiles()" class="form-control maxwidthandmargintop center-block btn btn-danger">
 			Search folder!
 		</button>
 	</div>
 	<div class="col-lg-6">
-		<h2>All current files in folder:</h2>
-		<ul>
-			<li ng-repeat="item in Items track by $index">
-				<img ng-src="">
-				<!-- <a target="_self" href="../../uploads/redcloud.png" download=>{{item}}</a>  -->
-				<a target="_self" ng-href="{{item}}" download>{{item}}</a>
-			</li>
+		<h2 class="text-center">All current files in folder:</h2>
+		<ul ng-repeat="item in items">
+			<a target="_self" ng-href="/uploads/{{item}}" download="{{item}}">
+				<li class="list-group-item list-group-item-action list-group-item-success center-block">
+				<!-- <img ng-src=""> -->
+					{{item}}
+				</li>
+			</a>
 		</ul>
 	</div>
 </div>
+ <!-- track by $index -->

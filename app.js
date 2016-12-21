@@ -34,9 +34,9 @@ g.settings = {
 };
 
 var options = m.multer.diskStorage({
-  destination: g.settings.appRoot + '/uploads',
+  destination: g.settings.appRoot + '/www/uploads',
   filename: function (req, file, cb) {
-    cb(null, (m.path.basename(file.originalname) + m.path.extname(file.originalname)));
+    cb(null, (m.path.basename(file.originalname)));
   }
 })
 var upload = m.multer({storage: options});
