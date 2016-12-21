@@ -42,7 +42,7 @@ module.exports = class Server {
 	  new g.classes.Mongo(this.app);
 	  new g.classes.Fs(this.app);
 	  
-	  this.app.get('*', (req, res) => {
+	  this.app.get('/', (req, res) => {
 			res.sendFile(me.appRoot + me.settings.webRoot + '/index.html');
 		});
 

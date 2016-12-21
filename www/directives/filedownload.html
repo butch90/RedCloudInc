@@ -9,9 +9,9 @@
 		<h2 class="text-center">All current files in folder:</h2>
 		<ul>
 			<li ng-repeat="item in items">
-				<img ng-src="">
-				<a target="_self" ng-href="../../uploads/{{item}}" download=>{{item}}</a> 
-				<!-- <a target="_self" ng-href="{{item}}" download>{{item}}</a> -->
+				<!-- <img ng-src=""> -->
+				<a target="_self" ng-href="../uploads/{{item}}" download="{{item}}">{{item}}</a>
+				<!-- <a target="_self" href="../../logo250x250.png" download>{{item}}</a> -->
 			</li>
 		</ul>
 	</div>
