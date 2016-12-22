@@ -44,11 +44,7 @@ app.service('fileUpload', ['$http', function ($http){
 				data: dataName,
 				headers: {'Content-type': 'application/json'}
 			})
-			.success(function (res, err){
-				if(err) {
-					console.log('error no file added');
-					return;
-				}
+			.success(function (res){
 				console.log(res, 'res');
 			})
 			.error(function (){
@@ -63,9 +59,9 @@ app.controller('uploadCtrl', ['$scope', '$http', 'fileUpload', function ($scope,
 		var data = $scope.myFile;
 		var uploadUrl = '/fs/uploadFile';
 		fileUpload.uploadFileToUrl(data, uploadUrl);
-		var name = m;
+		/*var name = m;*/
 		//var newName = JSON.stringify(name);
-		//var finalName = name;
+		var name = "File uploaded";
 		$scope.name = name;
 		console.log(name);
 	};

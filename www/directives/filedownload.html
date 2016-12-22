@@ -7,13 +7,15 @@
 	</div>
 	<div class="col-lg-6">
 		<h2 class="text-center">All current files in folder:</h2>
-		<ul>
-			<li ng-repeat="item in items">
-				<!-- <img ng-src=""> -->
-				<a target="_self" ng-href="../uploads/{{item}}" download="{{item}}">{{item}}</a>
-				<!-- <a target="_self" href="../../logo250x250.png" download>{{item}}</a> -->
+		<ul ng-mouseover="hoverOver()" ng-mouseleave="hoverOut()">
+			<li ng-repeat="data in repeatData" class="list-group">	
+				<a target="_self" ng-href="../uploads/{{data.data}}" download="{{data.data}}" class="list-group-item">{{data.data}}</a>
+				<span ng-show="hoverChange">
+					<button type="button" class="btn btn-danger buttonWidth" ng-click="deleteFile()" value="{{data.value}}" id="{{data.data}}">Delete</button>
+					<button type="button" class="btn btn-warning buttonWidth">Change name</button>
+					<button type="button" class="btn btn-info buttonWidth">Info</button>
+				</span>
 			</li>
 		</ul>
 	</div>
 </div>
- <!-- track by $index -->

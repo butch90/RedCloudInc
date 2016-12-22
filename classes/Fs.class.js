@@ -20,7 +20,7 @@ module.exports = class Fs {
 
 		this.app.post('/fs/uploadName', (req, res) =>{
 			var length = req.body.fileName.length-1;
-			req.body.fileName = req.body.fileName.slice(1, length);
+			req.body.fileName = req.body.fileName.slice(1, length)
 			me.files.create(req.body, (err, data) => {
 				if(err) {
 					console.log(err.stack);
@@ -40,8 +40,8 @@ module.exports = class Fs {
 					files.forEach(file => {
 						var length = file.length-4;
 						var finalFile = file.slice(0, length);
-						//var fileUrl = '../../uploads/'+ finalFile;
-						fileArray.push(finalFile);
+						var fileUrl = '../../uploads/'+ finalFile;
+						fileArray.push(fileUrl);
 					});
 				}
 			console.log(fileArray);

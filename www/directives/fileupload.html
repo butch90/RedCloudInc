@@ -3,8 +3,8 @@
 		<h2 class="text-center">Upload your file here</h2>
 		<h4 class="text-center">For best performance, upload file in the following formats</h4>
 		<ul>
-			<li class="list-group-item list-group-item-action list-group-item-success limaxwidth center-block">.zip</li>
-			<li class="list-group-item list-group-item-action list-group-item-success limaxwidth center-block">.rar</li>
+			<li class="list-group-item list-group-item-action list-group-item-success lismallwidth center-block">.zip .rar </li>
+			<li class="list-group-item list-group-item-action list-group-item-success lismallwidth center-block">.png .jpg .bmp .mp3 .pdf</li>
 		</ul>
 		<h4 class="text-center">Max upload size is not limited for now!<br> Be aware large files might not download later properly</h4>
 		<input type="file" file-model="myFile" class="form-control maxwidth center-block"/>
@@ -12,8 +12,8 @@
 		<h3 ng-model="errors">{{errors}}</h3>
 	</div>
 	<div class="col-lg-6">
-		<h3 class="text-center">Filename: </h3>
-		<h3 ng-model="name" class="text-center">{{name}}</h3>
+		<h1>Status: </h1>
+		<h2 ng-model="name" class="text-center">{{name}}</h2>
 	</div>
 </div>
 
