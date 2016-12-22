@@ -48,22 +48,22 @@ app.controller('filedownloadCtrl', ['$scope', '$http', '$location', '$attrs', ($
 		$scope.hoverChange = false;
 	}
 
-	$scope.deleteFile = () => {
-	var id;
-	$scope.data.value = id;
+	$scope.deleteFile = (id) => {
+		var data = id;
+		/*var file = file;*/
 		console.log(id);
-		/*$scope.data = data;
 		$http({
 			method: 'DELETE',
 			url: '/fs/removefilename/' + data
 		}).then(function successCallback (){
 			console.log("deleted");
-			$scope.message = "File deleted";
+			$scope.showFiles();
+			return;
 		}, function errorCallback (){
 			console.log("not deleted");
 			$scope.message = "Error on file deletion"
-		}*/
-	/*)*/}
+		}
+	)}
 
 }])
 		/*$http({
