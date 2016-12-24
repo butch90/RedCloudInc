@@ -3,6 +3,7 @@ module.exports = class Fs {
 	constructor(express) {
 		this.app = express;
 		this.appRoot = g.settings.appRoot;
+		this.fileRoot = g.settings.fileRoot;
 		this.settings = g.settings.Server;
 		this.fs = m.fs;
 		this.multer = m.multer;
@@ -68,6 +69,19 @@ module.exports = class Fs {
 					res.json(err.stack);
 				}
 				res.json('Removed');
+			})
+		})
+
+		this.app.post('/fs/removeFromDir', (req, res) => {
+			var path = req.body.fileName;
+			console.log(path);
+			var finalPath = me.fileRoot + '/uploads/' + path;
+			me.fs.unlink(finalPath, (err , cb) => {
+				if(err) {
+					console.log(err.stack);
+					res.json("deleted");
+				}
+				res.json("error");
 			})
 		})
 	}

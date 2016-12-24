@@ -61,9 +61,24 @@ app.controller('filedownloadCtrl', ['$scope', '$http', '$location', '$attrs', ($
 			return;
 		}, function errorCallback (){
 			console.log("not deleted");
-			$scope.message = "Error on file deletion"
+			$scope.message = "Error on file deletion";
 		}
-	)}
+	)};
+
+	$scope.deleteFileInDir = (file) => {
+		var path = file;
+		console.log(path);
+		$http({
+			method: 'POST',
+			url: '/fs/removeFromDir',
+			data: {fileName: path}
+		}).then(function successCallback () {
+			console.log("deleted file in dir");
+			return;
+		}, function errorCallback (){
+			console.log("error");
+		}
+	)};
 
 }])
 		/*$http({
