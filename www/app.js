@@ -12,6 +12,10 @@ app.config(["$routeProvider", "$locationProvider", function ($routeProvider, $lo
 		templateUrl: "views/home.html",
 		controller: "homeCtrl"
 	})
+	.when("/login",{
+		templateUrl: "views/login.html",
+		controller: "loginCtrl"
+	})
 	.when("/download",{
 		templateUrl: "views/download.html",
 		controller: "downloadCtrl"
@@ -19,6 +23,10 @@ app.config(["$routeProvider", "$locationProvider", function ($routeProvider, $lo
 	.when("/upload",{
 		templateUrl: "views/upload.html",
 		controller: "uploaderCtrl"
+	})
+	.when("/profile",{
+		templateUrl: "views/profile.html",
+		controller: "profileCtrl"
 	})
 	.otherwise({
 		templateUrl: "views/error.html"

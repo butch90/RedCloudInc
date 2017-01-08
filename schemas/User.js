@@ -4,7 +4,8 @@ var Schema = m.mongoose.Schema({
 	firstname: {type: String, required: true},
 	lastname: {type: String, required: true},
 	email: {type: String, required: false, unique: true},
-	title: {type: String, required: false}
+	title: {type: String, required: false},
+	img: {type: String, required: false}
 });
 
 module.exports = m.mongoose.model("User", Schema);

@@ -24,8 +24,8 @@ module.exports = class Order {
 		var me = this;
 		this.user.create(req.body, function(err, data) {
 			if(err) {
-				console.log(err.stack);
-				res.json(err.stack);
+				console.log(err);
+				res.json(err);
 			}
 			res.json(data);
 		});
@@ -39,17 +39,19 @@ module.exports = class Order {
 		var me = this;
 		this.user[query](data, function(err, result) {
 			if(err) {
-				res.json(err.stack);
+				res.json(err);
 			}
-			res.json(result)
+
+			console.log(result);
+			res.json(result);
 		});
 	}
 
 	PUT(req, res) {
 		this.user.findByIdAndUpdate(req.params.id ,req.body, function(err, data) {
 			if(err) {
-				res.json(err.stack);
-				console.log(err.stack);
+				res.json(err);
+				console.log(err);
 			}
 			res.json(data);
 		});
@@ -58,8 +60,8 @@ module.exports = class Order {
 	DELETE(req, res) {
 		this.user.findByIdAndRemove(req.params.id, function(err, data) {
 			if(err) {
-				res.json(err.stack);
-				console.log(err.stack);
+				res.json(err);
+				console.log(err);
 			}
 			res.json('Removed');
 		});

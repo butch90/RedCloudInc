@@ -4,6 +4,16 @@
 		<button ng-click="showFiles()" class="form-control maxwidthandmargintop center-block btn btn-danger">
 			Search folder!
 		</button>
+		<hr style="width: 95%; height: 1px; background: black; margin: 0 auto;">
+		<h2>{{noinfo}}{{deleted}}</h2>
+		<ul>
+			<li>
+				<h3>File Size: {{size}} bytes</h3>
+			</li>
+			<li>
+				<h3>File uploaded: {{birth}}</h3>
+			</li>
+		</ul>
 	</div>
 	<div class="col-lg-6">
 		<h2 class="text-center">All current files in folder:</h2>
@@ -11,9 +21,9 @@
 			<li ng-repeat="data in repeatData" class="list-group">	
 				<a target="_self" ng-href="../uploads/{{data.data}}" download="{{data.data}}" class="list-group-item">{{data.data}}</a>
 				<span ng-show="hoverChange">
+					<a target="_self" ng-href="../uploads/{{data.data}}" download="{{data.data}}"><button type="button" class="btn btn-warning buttonWidth">Download</button></a>
 					<button type="button" class="btn btn-danger buttonWidth" ng-click="deleteFile(data.value); deleteFileInDir(data.data) " value="{{data.value}}" id="{{data.data}}">Delete</button>
-					<button type="button" class="btn btn-warning buttonWidth">Change name</button>
-					<button type="button" class="btn btn-info buttonWidth">Info</button>
+					<button type="button" class="btn btn-info buttonWidth" ng-click="showInfo(data.data)">Info</button>
 				</span>
 			</li>
 		</ul>

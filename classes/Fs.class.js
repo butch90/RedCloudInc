@@ -70,7 +70,7 @@ module.exports = class Fs {
 				}
 				res.json('Removed');
 			})
-		})
+		});
 
 		this.app.post('/fs/removeFromDir', (req, res) => {
 			var path = req.body.fileName;
@@ -78,11 +78,25 @@ module.exports = class Fs {
 			var finalPath = me.fileRoot + '/uploads/' + path;
 			me.fs.unlink(finalPath, (err , cb) => {
 				if(err) {
-					console.log(err.stack);
-					res.json("deleted");
+					console.log("err");
+					res.json("error");
 				}
-				res.json("error");
+				res.json("deleted");
 			})
-		})
+		});
+
+		this.app.post('/fs/showinfo', (req, res) => {
+			var path = req.body.fileName;
+			console.log(path);
+			var finalPath = me.fileRoot + '/uploads/' + path;
+			me.fs.stat(finalPath, (err, result) => {
+				if(err) {
+					console.log(err);
+					res.json("error");
+				}
+				console.log(result);
+				res.json(result);
+			})
+		});
 	}
 }

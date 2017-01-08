@@ -89,3 +89,7 @@ li {
 .buttonWidth {
 	width: 32.8%;
 }
+
+.carouselmaxsize {
+	max-height: 500px;
+}

@@ -34,8 +34,8 @@ module.exports = class Login {
   		return;
 		}
   	this.model.findOne(data, (err, result) => {
-  		if(!result){
-  			console.log("error", err.stack);
+  		if(!result || err){
+  			console.log("error");
   			res.json(true);
         return;
   		} 

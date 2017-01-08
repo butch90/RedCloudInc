@@ -6,6 +6,11 @@ app.directive('showFiles', function (){
 
 app.controller('filedownloadCtrl', ['$scope', '$http', '$location', '$attrs', ($scope, $http, $location, $attrs) => {
 	var data;
+	$scope.info;
+	$scope.deleted;
+	if(!$scope.info) {
+		$scope.noinfo = "No file selected";
+	}
 
 	$scope.showFiles = () => {
 		$http({
@@ -74,6 +79,28 @@ app.controller('filedownloadCtrl', ['$scope', '$http', '$location', '$attrs', ($
 			data: {fileName: path}
 		}).then(function successCallback () {
 			console.log("deleted file in dir");
+			$scope.deleted = "File removed!"
+			return;
+		}, function errorCallback (){
+			console.log("error");
+		}
+	)};
+
+	$scope.showInfo = (file) => {
+		var path = file;
+		console.log(file);
+		$http({
+			method: 'POST',
+			url: '/fs/showInfo',
+			data: {fileName: path}
+		}).then(function successCallback (data) {
+			var data = data.data;
+			$scope.size = data.size;
+			var birthtime = data.birthtime;
+			birthtime = birthtime.slice(0, -14);
+			$scope.birth = birthtime;
+			$scope.noinfo = "";
+			$scope.deleted = "";
 			return;
 		}, function errorCallback (){
 			console.log("error");
