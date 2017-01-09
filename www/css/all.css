@@ -90,6 +90,6 @@ li {
 	width: 32.8%;
 }
 
-.carouselmaxsize {
-	max-height: 500px;
+.carouselMargin {
+	margin-top: 5.0em;
 }

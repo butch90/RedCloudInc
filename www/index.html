@@ -42,22 +42,32 @@
 	    <script src="directives/fileupload.js"></script>
 	    <script src="directives/filedownload.js"></script>
     	<script src="directives/profile.js"></script>
+    	<script src="directives/navbarFront.js"></script>
+    	<script src="directives/carousel.js"></script>
 		<!-- Custom Fonts -->
 	
 		<!-- Font Awesome -->
 		
 	</head>
     <body>	
-    	<div class="wrapper">
-    		<header></header>
-    	</div>
     	<div ng-controller="showCtrl">
+    		<div ng-show="currentPath == '/'">
+    			<div class="wrapper">
+    				<navbar-front></navbar-front>
+    			</div>
+    		</div>
+
 			<div ng-hide="currentPath === '/'">
-					<navbar></navbar>
-				</div>
+		    	<div class="wrapper">
+		    		<header></header>
+		    	</div>
+			</div>
+
+			<div ng-hide="currentPath === '/' || currentPath == '/login'">
+				<navbar></navbar>
 			</div>
 		</div>
-    	
+  
 			<ng-view></ng-view>
 			<footer></footer>
 		</body>
