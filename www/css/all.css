@@ -90,6 +90,12 @@ li {
 	width: 32.8%;
 }
 
+/*Carousel*/
+
 .carouselMargin {
 	margin-top: 5.0em;
+}
+
+#navbarColor {
+	background-color: white;
 }
