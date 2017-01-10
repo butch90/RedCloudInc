@@ -29,7 +29,7 @@ app.config(["$routeProvider", "$locationProvider", function ($routeProvider, $lo
 		controller: "profileCtrl"
 	})
 	.otherwise({
-		templateUrl: "views/error.html"
+		templateUrl: "views/home.html"
 	});
 
 	$locationProvider.html5Mode(true);
