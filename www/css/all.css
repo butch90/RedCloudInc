@@ -92,9 +92,6 @@ li {
 
 /*Carousel*/
 
-.carouselMargin {
-	margin-top: 8.0em;
-}
 
 .navbarstyle {
 	background-color: white;
@@ -147,20 +144,15 @@ li {
 -------------------------------------------------- */
 
 /* Carousel base class */
-.carouseldiv {
-	padding-top: 70px;
-}
-
 .carousel {
   height: 500px;
   margin-bottom: 60px;
 }
-/* Since positioning the image, we need to help out the caption */
+
 .carousel-caption {
   z-index: 10;
 }
 
-/* Declare heights because of positioning of img element */
 .carousel .item {
   height: 500px;
   background-color: #fff;
@@ -173,8 +165,15 @@ li {
   height: 500px;
 }
 
+.right.carousel-control, .left.carousel-control {
+    display: none;
+}
+
+.right.carousel-control, .left.carousel-control {
+    opacity: 0;
+}
 /* MARKETING CONTENT
--------------------------------------------------- */
+-------------------------------------------------- 
 
 /* Center align the text within the three columns below the carousel */
 .marketing .col-lg-4 {
