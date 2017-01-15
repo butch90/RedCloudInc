@@ -34,6 +34,7 @@
 		<script src="/controllers/ngshow.js"></script>
 		<script src="/controllers/profile.js"></script>
 		<script src="/controllers/login.js"></script>
+		<script src="/controllers/registration.js"></script>
 
    		<!-- directives -->
 	    <script src="directives/header.js"></script>
@@ -63,12 +64,10 @@
 		    	</div>
 			</div>
 
-			<div ng-hide="currentPath === '/' || currentPath == '/login'">
+			<div ng-hide="currentPath === '/' || currentPath == '/login' || currentPath == '/registration'">
 				<navbar></navbar>
 			</div>
 		</div>
-  
 			<ng-view></ng-view>
-			<footer></footer>
 		</body>
 </html>

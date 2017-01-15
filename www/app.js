@@ -16,6 +16,10 @@ app.config(["$routeProvider", "$locationProvider", function ($routeProvider, $lo
 		templateUrl: "views/login.html",
 		controller: "loginCtrl"
 	})
+	.when("/registration",{
+		templateUrl: "views/registration.html",
+		controller: "regCtrl"
+	})
 	.when("/download",{
 		templateUrl: "views/download.html",
 		controller: "downloadCtrl"
