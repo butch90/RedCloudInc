@@ -12,12 +12,23 @@ app.controller('profilCtrl', ['$scope', '$http', '$location', '$attrs', ($scope,
 	$scope.profileInfo = () => {
 		$http({
 			method: 'GET',
-			url: '/api/user'
+			url: '/user/getuserprofiledata'
 		}).then(function successCallback (data){
-			console.log(data);
+			console.log("success");
 
 		}, function errorCallback (){
 			console.log("error");
 		})
+	}
+	/*Borde flyttas så att den kan köras med inloggningen, så jag kan nå sessionID hela tiden från inloggningen sker*/
+	$scope.getUserData = () => {
+		$http({
+			method: 'GET',
+			url: '/user/getuserloggedinid'
+		}).then(function successCallback(res){
+			console.log("success");
+		},function errorCallback(res){
+			console.log("error");
+		});
 	}
 }])

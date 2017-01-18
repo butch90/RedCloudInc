@@ -1,0 +1,3 @@
+Spara user infon i ett object, kolla sedan med en if-sats om allt finns i objectet (true/false) 
+så slipper jag ladda in från db igen.
+

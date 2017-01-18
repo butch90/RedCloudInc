@@ -4,27 +4,36 @@ module.exports = class Order {
 		this.app = express;
 		this.dataBase  = new g.classes.Mongo();
 		this.user = this.dataBase.getModel('User');
-
+		this.mongodb = m.mongodb.ObjectId;
 		var me = this;
 		this.router();
 	}
 	router() {
 		var me = this;
-		this.app.all(g.settings.User.route, function(req, res) {
-			if (!me[req.method]) {
-				res.sendStatus(404);
-				return;
-			}
-			res.header('X-Client-id', req.sessionID).header('X-username', req.session.xUsername);
-			me[req.method](req, res);
+
+		this.app.get('/user/getuserloggedinid', (req, res) => {
+			/*SPARA SOM OBJ SÅ JAG KAN HÄMTA FRÅN OBJ*/
+			console.log(req.sessionID, "sessionID");	
+			res.json(true);	
 		});
+
+		this.app.get('/user/getuserprofiledata', (req, res) => {
+			var userObject = {};
+			me.user.find({"_id": me.mongodb(req.sessionID)}, (err, result) => {
+				userObject = result;
+				//delete userObject[0, "password"];
+				console.log(userObject, "result");
+			});
+			res.json(true);
+		});
+
 	}
-	
+	/*
 	POST(req, res) {
 		var me = this;
 		this.user.create(req.body, function(err, data) {
 			if(err) {
-				console.log(err);
+				//console.log(err);
 				res.json(err);
 			}
 			res.json(data);
@@ -42,7 +51,7 @@ module.exports = class Order {
 				res.json(err);
 			}
 
-			console.log(result);
+			//console.log(result);
 			res.json(result);
 		});
 	}
@@ -51,7 +60,7 @@ module.exports = class Order {
 		this.user.findByIdAndUpdate(req.params.id ,req.body, function(err, data) {
 			if(err) {
 				res.json(err);
-				console.log(err);
+				//console.log(err);
 			}
 			res.json(data);
 		});
@@ -66,4 +75,7 @@ module.exports = class Order {
 			res.json('Removed');
 		});
 	}
+
+
+*/
 }

@@ -1,6 +1,7 @@
 m = {
     fs: require('fs'),
     path: require('path'),
+    mongodb: require('mongodb'),
 };
 g = {};
 
