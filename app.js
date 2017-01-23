@@ -25,7 +25,7 @@ g.settings = {
     'Server',
     'Login',
     'Users',
-    'Fs',
+    'Fs'
   ],
   Login: {
     route: '/api/login/:id?'

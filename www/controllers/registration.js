@@ -4,10 +4,11 @@ app.controller("regCtrl", ["$scope", "$location", "$http", function ($scope, $lo
 	$scope.regNewUser = function() {
 		if($scope.username != null && $scope.username != '' && $scope.password != null && $scope.password != '' && $scope.repassword != null && $scope.repassword != '' && $scope.email != null && $scope.email != ''){
 				if($scope.password === $scope.repassword){
+					var title = 'User';
 					$http({
 						method: 'POST',
-						url: '/reg/newregistration',
-						data: {username: $scope.username, password: $scope.password, repassword: $scope.repassword, email: $scope.email}
+						url: '/user/newregistration',
+						data: {username: $scope.username, password: $scope.password, email: $scope.email, title: title}
 					}).then(function successCallback(res){
 						console.log("success");
 						

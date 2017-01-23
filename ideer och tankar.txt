@@ -1,3 +1,9 @@
-Spara user infon i ett object, kolla sedan med en if-sats om allt finns i objectet (true/false) 
-så slipper jag ladda in från db igen.
+1).
+byta bild, användarnamn osv...
+
+2).
+Kunna logga ut sig...
+
+
+
 

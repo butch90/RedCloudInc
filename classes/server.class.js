@@ -3,17 +3,11 @@ module.exports = class Server {
 	constructor(Mongo){
 
 		this.settings = g.settings.Server;
-
 		this.appRoot = g.settings.appRoot;
-
 		this.app = m.express();
-
 		this.multer = m.multer;
-
 		this.upload = m.upload;
-		
 		this.fs = m.fs;
-
 		this.setup();
 
 	}
@@ -38,7 +32,7 @@ module.exports = class Server {
 
 		// Mongoose classes
 	  new g.classes.Login(this.app);
-		new g.classes.Users(this.app);
+	  new g.classes.Users(this.app);
 	  new g.classes.Mongo(this.app);
 	  new g.classes.Fs(this.app);
 	  
